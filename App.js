@@ -1,11 +1,12 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, Button } from 'react-native';
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>Vivek</Text>
+      <Text>hello</Text>
       <StatusBar style="auto" />
+      <Button title="tap me" />
     </View>
   );
 }
