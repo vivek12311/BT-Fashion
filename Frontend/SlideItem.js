@@ -59,7 +59,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'transparent',
     borderRadius: 25,
     width: 370,
-    marginBottom: 50,
+    marginBottom: 70,
     marginTop: 0
   },
   title: {
@@ -80,7 +80,7 @@ const styles = StyleSheet.create({
   score: {
     fontSize: 13,
     fontWeight: 'bold',
-    marginTop: 0,
+    marginTop: -20,
     left: 150
   }
 });

@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { View, ActivityIndicator, FlatList, StyleSheet, Animated, TouchableOpacity, ImageBackground } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
-import SlideItem from './SlideItem';  // Add this import statement
-import Pagination from './Pagination';  // Add this import statement
+import SlideItem from './SlideItem';  
+import Pagination from './Pagination'; 
 import Search from '../assets/Search.js';
 import Cart from '../assets/Cart.js';
 import Wand from '../assets/Wand.js';
@@ -13,26 +13,32 @@ import backgroundImage from '../assets/Background.png';
 const Slides = [
   {
     score: '♻️ +20',
-    img: 'https://i.ebayimg.com/images/g/g7wAAOSw-VJkEUMZ/s-l1600.jpg',
-    title: 'UT Polo',
-    description: 'Antigua UT Longhorn polyester polo shirt',
-    price: '$20.00',
+    img: 'https://i.ebayimg.com/00/s/MTYwMFgxNjAw/z/1qcAAOSwVUphISvY/$_12.JPG?set_id=880000500F',
+    title: 'Womens Tank Top',
+    description: 'Lululemon Align Tank Top Size 6',
+    price: '$40.00',
   }, 
   {
     score: '♻️ +50',
-    img: 'https://img01.ztat.net/article/spp-media-p1/20d5e542bb6a45099ab89f254dd57652/329a06a160e04719a4f19f8a4973a268.jpg?imwidth=1800&filter=packshot',
-    title: 'Blue Jeans',
-    description: 'Tommy Hilfiger Modern Straight Light Blue',
-    price: '$15.99',
+    img: 'https://img.abercrombie.com/is/image/anf/KIC_155-3539-0010-295_prod1.jpg?policy=product-large',
+    title: 'Relaxed Jeans',
+    description: 'Curve High Rise 90s Relaxed Jean Medium Marble',
+    price: '$50.00',
   },
   {
     score: '♻️ +80',
-    img: 'https://pintoranch.com/cdn/shop/files/8649TRiosMens-1.png?v=1688653441&width=1445',
-    title: 'Boots',
-    description: 'Rios Mens Brown Feral Hog Cowboy Boots',
-    price: '$40.00',
+    img: 'https://i.ebayimg.com/images/g/T2kAAOSwV~Fjd79H/s-l1200.webp',
+    title: 'Womens Boots',
+    description: 'J.B. DILLON Brown Leather Snip Toe Boots size 8',
+    price: '$28.00',
   },
-  // Add other slides as needed
+  {
+    score: '♻️ +80',
+    img: 'https://m.media-amazon.com/images/I/71UOleB-wuL._AC_SX679_.jpg',
+    title: 'Cowgirl Hat',
+    description: 'Western Cowgirl Hat Pinch Front Wide Brim Style ',
+    price: '$8.00',
+  },
 ];
 
 const Generated = () => {
