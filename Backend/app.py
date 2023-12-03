@@ -1,5 +1,5 @@
 import os
-os.environ["OPENAI_API_KEY"] = ""
+os.environ["OPENAI_API_KEY"] = "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"
 import openai
 from flask import Flask, request, jsonify
 from flask_cors import CORS
@@ -10,14 +10,16 @@ CORS(app)
 api = Api(app)
 
 @app.route('/api', methods=['POST'])
-
 def api():
-    situation = request.form.get('user_data') #outfit they want
-    clothing_items = request.form.get('clothes') #database of clothing items (keywords)
+    # situation = request.form.get('aesthetic') #outfit they want
+    # clothing_items = request.form.get('occasion') #database of clothing items (keywords)
+    data = request.get_json()
+    aesthetic = data.get('aesthetic')
+    occasion = data.get('occasion')
 
-    #prompt = "Given the following clothing items and their respective number, return the numbers of the clothing items that best fit the given characteristics: " + data 
-    prompt = "Given the following clothing items in {name: name, id: id} format, return the ids of the clothing items in an outfit that would best fit the given situation in the format of [id1, id2, ...]. Output nothing other than these ids: \n Clothes:" + clothing_items + "\n Situation: " + situation
-    
+
+    #prompt = "Given the aesthetic and occasion generate 5 to 10 : " + data 
+    prompt = "Given the aesthetic in {name: name, id: id} format, return the ids of the clothing items in an outfit that would best fit the given situation in the format of [id1, id2, ...]. Output nothing other than these ids: \n Clothes:" + aesthetic + "\n Situation: " + occasion
     
     #response = prompt
     response = openai.ChatCompletion.create(

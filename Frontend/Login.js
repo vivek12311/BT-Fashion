@@ -44,7 +44,7 @@ export default function Login() {
           <Text style={styles.signupText}>
             Don't have an account?{' '}
             <TouchableOpacity onPress={navigateToSignup}>
-              <Text style={styles.signupLink}>Sign Up</Text>
+              <Text style={styles.signupLink}>Sign Up Here</Text>
             </TouchableOpacity>
           </Text>
         </View>

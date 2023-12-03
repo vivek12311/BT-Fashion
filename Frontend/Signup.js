@@ -5,9 +5,10 @@ import { useNavigation } from '@react-navigation/native';
 export default function Signup() {
   const navigation = useNavigation();
 
+
   const navigateToLogin = () => {
     navigation.navigate('Login');
-  };
+      }; 
 
   return (
     <View style={styles.container}>

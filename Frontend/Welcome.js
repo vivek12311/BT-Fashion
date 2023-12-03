@@ -1,46 +1,71 @@
-import React from 'react';
-import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
+import React, { useState, useEffect } from 'react';
+import { View, Text, StyleSheet, TouchableOpacity, ImageBackground, ActivityIndicator } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
+import LogoMain from '../assets/LogoMain.png';
+import MainW from '../assets/MainW.png';
 
 export default function Welcome() {
   const navigation = useNavigation();
+  const [isLoading, setIsLoading] = useState(true);
 
-  const navigateToHomepage = () => {
-    navigation.replace('Homepage');
+  // Simulate loading effect with a delay
+  useEffect(() => {
+    const fetchData = async () => {
+      await new Promise(resolve => setTimeout(resolve, 2000)); // Adjust the delay as needed
+      setIsLoading(false);
+    };
+
+    fetchData();
+  }, []);
+
+  const navigateToOutfitGenerator = () => {
+    navigation.replace('Outfitgenerator');
   };
 
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>ReFit</Text>
-      <View style={styles.circleContainer}>
-        {/* Your logo or circle goes here */}
+    <ImageBackground
+      source={MainW}
+      style={styles.backgroundImage}
+    >
+      <View style={styles.container}>
+        {isLoading ? (
+          // If loading, show the loading indicator
+          <ActivityIndicator size="large" color="white" />
+        ) : (
+          // If not loading, show the main content
+          <>
+            <View style={styles.messageContainer}>
+              <Text style={styles.message}>Welcome Back,</Text>
+              <Text style={styles.username}>Vivek!</Text>
+            </View>
+            <TouchableOpacity
+              style={styles.nextButton}
+              onPress={navigateToOutfitGenerator}
+            >
+              <Text style={styles.buttonText}>Next</Text>
+            </TouchableOpacity>
+          </>
+        )}
       </View>
-      <View style={styles.messageContainer}>
-        <Text style={styles.message}>Welcome Back,</Text>
-        <Text style={styles.username}>Vivek!</Text>
-      </View>
-      <TouchableOpacity
-        style={styles.nextButton}
-        onPress={navigateToHomepage} 
-      >
-        <Text style={styles.buttonText}>Next</Text>
-      </TouchableOpacity>
-    </View>
+    </ImageBackground>
   );
 }
 
-
 const styles = StyleSheet.create({
+  backgroundImage: {
+    flex: 1,
+    resizeMode: 'cover', // or 'stretch' or 'contain'
+  },
   container: {
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: '#FFA234'
+    backgroundColor: 'transparent',  // Set the background color to transparent
   },
   title: {
     fontSize: 24,
     fontWeight: 'bold',
-    color: 'white'
+    color: 'orange'
   },
   circleContainer: {
     width: 120,
@@ -52,11 +77,16 @@ const styles = StyleSheet.create({
     marginVertical: 10,
     marginBottom: 70,
   },
+  logo: {
+    width: '100%',
+    height: '100%',
+  },
   messageContainer: {
     alignItems: 'center',
+    marginTop: 150
   },
   message: {
-    fontSize: 25,
+    fontSize: 28,
     fontWeight: 'bold',
     color: 'white'
   },
@@ -68,7 +98,7 @@ const styles = StyleSheet.create({
     color: 'white'
   },
   nextButton: {
-    backgroundColor: 'white', // Use the same styling as the "Login" button
+    backgroundColor: 'white',
     borderRadius: 10,
     padding: 10,
     marginTop: 10,
@@ -79,6 +109,13 @@ const styles = StyleSheet.create({
     color: '#FFA234',
     textAlign: 'center',
     fontWeight: 'bold',
-    fontSize: 17
+    fontSize: 19
   },
+  loadingText: {
+    fontSize: 18,
+    fontWeight: 'bold',
+    color: 'white',
+    marginBottom: 20,
+  },
+
 });
