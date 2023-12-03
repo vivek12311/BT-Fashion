@@ -6,7 +6,7 @@ export default function Welcome() {
   const navigation = useNavigation();
 
   const navigateToHomepage = () => {
-    navigation.navigate('Homepage');
+    navigation.replace('Homepage');
   };
 
   return (
@@ -29,20 +29,18 @@ export default function Welcome() {
   );
 }
 
-// ... (rest of the styles)
-
-
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: 'white'
+    backgroundColor: '#FFA234'
   },
   title: {
     fontSize: 24,
     fontWeight: 'bold',
+    color: 'white'
   },
   circleContainer: {
     width: 120,
@@ -60,15 +58,17 @@ const styles = StyleSheet.create({
   message: {
     fontSize: 25,
     fontWeight: 'bold',
+    color: 'white'
   },
   username: {
     fontSize: 25,
     fontWeight: 'bold',
     marginTop: 1,
-    marginBottom: 5
+    marginBottom: 5,
+    color: 'white'
   },
   nextButton: {
-    backgroundColor: 'black', // Use the same styling as the "Login" button
+    backgroundColor: 'white', // Use the same styling as the "Login" button
     borderRadius: 10,
     padding: 10,
     marginTop: 10,
@@ -76,7 +76,7 @@ const styles = StyleSheet.create({
     marginBottom: 100
   },
   buttonText: {
-    color: 'white',
+    color: '#FFA234',
     textAlign: 'center',
     fontWeight: 'bold',
     fontSize: 17

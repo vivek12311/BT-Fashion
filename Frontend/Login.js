@@ -7,8 +7,8 @@ export default function Login() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
-  const naviagteToWelcome = () => {
-    navigation.navigate('Welcome');
+  const navigateToWelcome = () => {
+    navigation.replace('Welcome');
   };
 
   const navigateToSignup = () => {
@@ -37,7 +37,7 @@ export default function Login() {
         <View style={styles.buttonAndMessageContainer}>
           <TouchableOpacity
             style={styles.loginButton}
-            onPress={naviagteToWelcome}
+            onPress={navigateToWelcome}
           >
             <Text style={styles.buttonText}>Log In</Text>
           </TouchableOpacity>
@@ -53,12 +53,13 @@ export default function Login() {
   );
 }
 
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: 'white', // Set the background color to white
+    backgroundColor: 'white', 
   },
   loginname: {
     width: '80%',
@@ -72,7 +73,7 @@ const styles = StyleSheet.create({
     marginLeft: 30
   },
   inputContainer: {
-    alignItems: 'center', // Center-align the input boxes
+    alignItems: 'center', 
   },
   input: {
     width: '80%',
@@ -82,17 +83,17 @@ const styles = StyleSheet.create({
     marginVertical: 5,
     padding: 5,
     borderRadius: 10,
-    backgroundColor: 'lightgray', // Set the input box background color to grey
+    backgroundColor: '#FFDEB7', 
   },
   buttonAndMessageContainer: {
     alignItems: 'center',
   },
   loginButton: {
-    backgroundColor: 'black',
+    backgroundColor: '#FFA234',
     borderRadius: 10,
     padding: 10,
     marginTop: 10,
-    width: '60%',
+    width: '80%%',
   },
   buttonText: {
     color: 'white',

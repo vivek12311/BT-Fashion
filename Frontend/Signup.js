@@ -72,13 +72,13 @@ const styles = StyleSheet.create({
     marginVertical: 5,
     padding: 5,
     borderRadius: 10,
-    backgroundColor: 'lightgray',
+    backgroundColor: '#FFDEB7',
   },
   buttonAndMessageContainer: {
     alignItems: 'center',
   },
   loginButton: {
-    backgroundColor: 'black',
+    backgroundColor: '#FFA234',
     borderRadius: 10,
     padding: 10,
     marginTop: 10,
