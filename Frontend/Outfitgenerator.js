@@ -104,15 +104,15 @@ const Outfitgenerator = () => {
           <View style={styles.buttonAndMessageContainer}>
             {/* Wrap the words in a row-oriented View with a background color */}
             <View style={styles.decorativeBox}>
-              <Text style={styles.buttonText}>Start</Text>
+              {/* <Text style={styles.buttonText}>Start</Text> */}
               <TouchableOpacity onPress={navigateToGeneratedWithDelay}>
-                <Text style={styles.buttonTextl}>t</Text>
+                <Text style={styles.buttonTextl}>Start the </Text>
               </TouchableOpacity>
               <TouchableOpacity onPress={navigateToGenerated2WithDelay}>
-                <Text style={styles.buttonTextl}>h</Text>
+                <Text style={styles.buttonTextl}>Generator</Text>
               </TouchableOpacity>
-              <Text style={styles.buttonTextl}>e</Text>
-              <Text style={styles.buttonText}>Generator</Text>
+              {/* <Text style={styles.buttonTextl}>e</Text>
+              <Text style={styles.buttonText}>Generator</Text> */}
             </View>
           </View>
         </View>
